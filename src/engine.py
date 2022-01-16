@@ -733,12 +733,12 @@ def pipeline_3d(args, lattice, inches=3, dpi=96, turd=10):
     scad_txt = 'scale([30, 30, 30]) linear_extrude(height=.18, layer="0") import("%s");\n' % dxffn
     f.write(scad_txt)
     f.close()
-    cmd = "/Applications/OpenSCAD.app/Contents/MacOS/OpenSCAD -o %s %s" % (stlfn, scad_fn)
+    cmd = "openscad -o %s %s" % (stlfn, scad_fn)
     msg = "Running '%s'" % cmd
     log(msg)
     os.system(cmd)
     #
-    cmd = "python /Applications/Cura/Cura.app/Contents/Resources/Cura/cura.py -s %s -i %s" % (stlfn, SNOWFLAKE_INI)
+    cmd = "cura -s %s -i %s" % (stlfn, SNOWFLAKE_INI)
     msg = "Running '%s'" % cmd
     log(msg)
     os.system(cmd)

@@ -50,8 +50,8 @@ def get_cli():
         ensure_python()
     if args.pipeline_3d:
         args.bw = True
-    if args.pipeline_3d or args.pipeline_lasercutter:
-        ensure_python()
+    #if args.pipeline_3d or args.pipeline_lasercutter:
+        #ensure_python()
     return args
 
 if __name__ == "__main__":
